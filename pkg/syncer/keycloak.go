@@ -245,7 +245,7 @@ func (k *KeycloakSyncer) Sync() ([]userv1.Group, error) {
 		}
 
 		for _, user := range k.CachedGroupMembers[*cachedGroup.ID] {
-			ocpGroup.Users = append(ocpGroup.Users, *user.Username)
+			ocpGroup.Users = append(ocpGroup.Users, *user.Email)
 		}
 
 		ocpGroups = append(ocpGroups, ocpGroup)
